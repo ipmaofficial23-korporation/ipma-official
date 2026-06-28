@@ -1,7 +1,3 @@
-
-
-
-
 // ==================== DATA DIVISI ====================
 const divisions = [
     { id: 'pendidikan', name: 'Divisi Pendidikan', description: 'Meningkatkan kualitas akademik, tahfizh, dan pengembangan minat bakat.', icon: '📖', color: '#4ade80', head: 'Alfi Muhammad Meira', wakil: 'Muhammad Zakwan Ilman',
