@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPMA MA TQ Al-Imam Ashim - Struktur Organisasi 2026-2027</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+    <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
+    <div class="loading-screen" id="loading-screen"><div class="loader"></div><p>IPMA MA TQ AL-IMAM ASHIM</p></div>
+    <canvas id="particle-canvas"></canvas>
+    <nav id="navbar">
+        <div class="logo">IPMA Al-Imam Ashim</div>
+        <ul class="nav-links">
+            <li><a href="#spline-hero">Beranda</a></li>
+            <li><a href="#statistik">Statistik</a></li>
+            <li><a href="#divisi">Divisi</a></li>
+            <li><a href="#anggota">Anggota</a></li>
+            <li><a href="#struktur">Struktur</a></li>
+            <li><a href="#lokasi">Lokasi</a></li>
+            <li><div class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></div></li>
+        </ul>
+        <div class="mobile-menu-btn"><span></span><span></span><span></span></div>
+    </nav>
+
+    <!-- SPLINE 3D HERO SECTION -->
+    <section id="spline-hero" class="spline-hero-section">
+        <div class="spline-hero-container">
+            <div class="spline-spotlight" id="splineSpotlight"></div>
+            
+            <div class="spline-layout">
+                <div class="spline-text-content">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        Masa Bakti 2026-2027
+                    </div>
+                    <h1 class="spline-title">
+                        IKATAN PELAJAR<br>
+                       <span class="gradient-spline-text" id="switchingWord">MA TQ Al-Imam Ashim</span>
+                    <p class="spline-description">
+                        Mewujudkan santri berakhlak mulia, disiplin, profesional, dan unggul dalam Al-Qur'an.
+                    </p>
+                    <div class="spline-buttons">
+                        <a href="#divisi" class="spline-btn spline-btn-primary">
+                            <i class="fas fa-users"></i> Jelajahi Divisi
+                        </a>
+                        <a href="#anggota" class="spline-btn spline-btn-secondary">
+                            <i class="fas fa-id-card"></i> Lihat Anggota
+                        </a>
+                    </div>
+                    <div class="spline-stats">
+                        <div class="spline-stat">
+                            <span class="spline-stat-number">8</span>
+                            <span class="spline-stat-label">Divisi</span>
+                        </div>
+                        <div class="spline-stat">
+                            <span class="spline-stat-number">47</span>
+                            <span class="spline-stat-label">Anggota</span>
+                        </div>
+                        <div class="spline-stat">
+                            <span class="spline-stat-number">2026</span>
+                            <span class="spline-stat-label">Masa Bakti</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spline-scene-wrapper" id="splineSceneWrapper">
+                    <div class="spline-loader" id="splineLoader">
+                        <div class="spline-spinner"></div>
+                        <p>Memuat 3D Scene...</p>
+                    </div>
+                    <canvas id="spline-canvas" class="spline-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="statistik">
+        <div class="section-header reveal"><div class="section-label">Overview</div><h2 class="section-title">Statistik Organisasi</h2><p class="section-desc">Gambaran singkat tentang komposisi IPMA MA TQ Al-Imam Ashim.</p></div>
+        <div class="stats-grid">
+            <div class="stat-card reveal"><span class="stat-number" data-target="8">0</span><span class="stat-label">Divisi Aktif</span></div>
+            <div class="stat-card reveal"><span class="stat-number" data-target="47">0</span><span class="stat-label">Total Anggota</span></div>
+            <div class="stat-card reveal"><span class="stat-number" data-target="4">0</span><span class="stat-label">Pengurus Inti</span></div>
+            <div class="stat-card reveal"><span class="stat-number" data-target="2026">0</span><span class="stat-label">Masa Bakti</span></div>
+        </div>
+    </section>
+
+    <section id="divisi">
+        <div class="section-header reveal"><div class="section-label">Tim Kami</div><h2 class="section-title">8 Divisi IPMA</h2><p class="section-desc">Setiap divisi memiliki peran strategis dalam mewujudkan visi dan misi organisasi.</p></div>
+        <div class="divisions-grid" id="divisions-grid"></div>
+    </section>
+
+    <section id="anggota">
+        <div class="section-header reveal"><div class="section-label">Directory</div><h2 class="section-title">Direktori Anggota</h2><p class="section-desc">Kenali seluruh pengurus IPMA MA TQ Al-Imam Ashim masa bakti 2026-2027.</p></div>
+        <div class="members-container">
+            <div class="filter-tabs reveal" id="filter-tabs"></div>
+            <div class="search-member reveal">
+                <input type="text" id="search-member-input" placeholder="🔍 Cari anggota berdasarkan nama...">
+            </div>
+            <div class="members-grid" id="members-grid"></div>
+        </div>
+    </section>
+
+    <section id="struktur">
+        <div class="section-header reveal"><div class="section-label">Hierarki</div><h2 class="section-title">Struktur Organisasi</h2><p class="section-desc">Tata kelola organisasi IPMA MA TQ Al-Imam Ashim yang terstruktur.</p></div>
+        <div class="org-tree reveal" id="org-tree-container"></div>
+    </section>
+
+    <section id="lokasi" style="padding: 80px 5%;">
+        <div class="section-header reveal" style="text-align: center; margin-bottom: 40px;">
+            <div class="section-label">Lokasi Kami</div>
+            <h2 class="section-title">Temukan MA TQ Al-Imam Ashim</h2>
+            <p class="section-desc">Jl. Insinyur H. M. Yamin No.12, Makassar</p>
+        </div>
+        <div style="position: relative; width: 100%; height: 0; padding-bottom: 50%; border-radius: 16px; overflow: hidden;">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.676!2d119.460108!3d-5.176644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee3e3f5e6d46f%3A0x7c8b91c9f32b8f5!2sJl.%20Insinyur%20H.%20M.%20Yamin%20No.12%2C%20Panaikang%2C%20Kec.%20Panakkukang%2C%20Kota%20Makassar%2C%20Sulawesi%20Selatan%2090231!5e0!3m2!1sen!2sid!4v1715432100000!5m2!1sen!2sid" 
+                width="100%" 
+                height="350" 
+                style="border:0; border-radius: 16px;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo">IPMA Al-Imam Ashim</div>
+        <p>Menjadi pelita yang tak pernah padam sebelum terang itu datang.</p>
+        <ul class="footer-links">
+            <li><a href="#spline-hero">Beranda</a></li>
+            <li><a href="#divisi">Divisi</a></li>
+            <li><a href="#anggota">Anggota</a></li>
+            <li><a href="#struktur">Struktur</a></li>
+            <li><a href="#lokasi">Lokasi</a></li>
+        </ul>
+        <p class="copyright">© IPMA MA TQ Al-Imam Ashim Makassar. Masa Bakti 2026-2027.</p>
+    </footer>
+
+    <div class="modal-overlay" id="modal-overlay"><div class="modal"><button class="modal-close" id="modal-close">&times;</button><div class="modal-avatar" id="modal-avatar"></div><h3 id="modal-name"></h3><p class="role" id="modal-role"></p><p class="division" id="modal-division"></p><div id="modal-instagram" style="text-align:center;"></div><div class="detail-section"><h4>📝 Motivasi</h4><p id="modal-motto"></p></div><div class="detail-section"><h4>⚡ Hobi</h4><p id="modal-hobi"></p></div><div class="detail-section"><h4>🎓 Riwayat Pendidikan</h4><div id="modal-pendidikan"></div></div></div></div>
+
+    <div class="modal-overlay" id="division-modal-overlay"><div class="modal"><button class="modal-close" id="division-modal-close">&times;</button><div style="text-align:center;"><div class="division-icon" id="division-modal-icon" style="margin: 0 auto 1rem;"></div><h3 id="division-modal-name"></h3></div><div class="detail-section"><h4>🎯 Tujuan Divisi</h4><p id="division-tujuan"></p></div><div class="detail-section"><h4>📋 Program Kerja</h4><ul id="division-proker" class="program-list"></ul></div></div></div>
+
+    <!-- AI CHATBOT -->
+    <button class="chatbot-btn-ipma" id="chatbotBtnIpma">
+        <i class="fas fa-robot"></i>
+    </button>
+    <div class="chatbot-container-ipma" id="chatbotContainerIpma">
+        <div class="chatbot-header-ipma">
+            <h4><i class="fas fa-robot"></i> AI Pesantren Al-Imam Ashim</h4>
+            <button class="chatbot-close-ipma" id="chatbotCloseIpma">&times;</button>
+        </div>
+        <div class="chatbot-messages-ipma" id="chatbotMessagesIpma">
+            <div class="message-ipma bot">
+                👋 Assalamu'alaikum! Saya AI yang tahu segalanya tentang <strong>Pesantren Al-Imam Ashim Makassar</strong>.<br>
+                Tanyakan apa saja: sejarah, pengasuh, program tahfizh, qiraat, prestasi, kontak, dll.<br>
+                Contoh: "Siapa pengasuh ponpes?" atau "Apa itu qiraat sab'ah?"
+            </div>
+        </div>
+        <div class="chatbot-suggestions-ipma" id="chatbotSuggestionsIpma">
+            <span class="suggestion-ipma" data-question="Apa itu MA TQ Al-Imam Ashim?">📌 Profil madrasah</span>
+            <span class="suggestion-ipma" data-question="Siapa pengasuh ponpes Al-Imam Ashim?">👳 Pengasuh</span>
+            <span class="suggestion-ipma" data-question="Apa program unggulan pesantren?">📖 Program unggulan</span>
+            <span class="suggestion-ipma" data-question="Apa prestasi pesantren?">🏆 Prestasi</span>
+            <span class="suggestion-ipma" data-question="Alamat ponpes Al-Imam Ashim?">📍 Alamat</span>
+            <span class="suggestion-ipma" data-question="Bagaimana cara daftar santri baru?">📝 Pendaftaran</span>
+        </div>
+        <div class="chatbot-input-ipma">
+            <input type="text" id="chatbotInputIpma" placeholder="Tanya tentang pesantren...">
+            <button id="chatbotSendIpma"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Import Maps and Scripts -->
+    <script type="importmap">
+        {
+            "imports": {
+                "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@1.9.0/build/runtime.js"
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+    <script type="module" src="spline-init.js"></script>
+</body>
+</html>
